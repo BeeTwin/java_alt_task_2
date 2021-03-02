@@ -22,7 +22,7 @@ public class PathFinder {
             if(current.point.equals(maze.finish))
                 return current;
 
-            if(visited.contains(current.point) || !maze.canStep(current.point.x, current.point.y))
+            if(visited.contains(current.point) || !maze.canStep(current.point))
                 continue;
 
             visited.add(current.point);

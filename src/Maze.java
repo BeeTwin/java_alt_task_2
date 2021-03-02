@@ -16,12 +16,17 @@ public class Maze {
                     finish = new Point(i, j);
     }
 
-    public boolean canStep(int i, int j) {
-        Tile tile = tiles[i][j];
-        return isWithin(i, j) && (tile.equals(Tile.EMPTY) || tile.equals(Tile.START) || tile.equals(Tile.FINISH));
+    public boolean canStep(Point point) {
+        Tile tile;
+        boolean canStep;
+        if(canStep = isWithin(point)) {
+            tile = tiles[point.x][point.y];
+            canStep = tile.equals(Tile.EMPTY) || tile.equals(Tile.START) || tile.equals(Tile.FINISH);
+        }
+        return canStep;
     }
 
-    public boolean isWithin(int i, int j) {
-        return i >= 0 && j >= 0 && i < tiles.length && j <= tiles[i].length;
+    public boolean isWithin(Point point) {
+        return point.x >= 0 && point.y >= 0 && point.x < tiles.length && point.y < tiles[point.x].length;
     }
 }
