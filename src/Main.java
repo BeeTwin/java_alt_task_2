@@ -8,8 +8,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter path: ");
         String txt = in.nextLine();
-        //String[] lines = fw.readAllLines(txt);
-        String[] lines = {
+        String[] lines = fw.readAllLines(txt);
+        /*String[] lines = {
             "............",
             "..#......#..",
             "...s#..#.#..",
@@ -20,7 +20,7 @@ public class Main {
             ".#####...##.",
             ".......#..f.",
             "............"
-        };
+        };*/
         Tile[][] tiles = Parser.parse(lines);
         Maze maze = new Maze(tiles);
         PathFinder pf = new PathFinder(maze);
