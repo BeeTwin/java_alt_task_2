@@ -18,6 +18,10 @@ public class Maze {
 
     public boolean canStep(int i, int j) {
         Tile tile = tiles[i][j];
-        return tile.equals(Tile.EMPTY) || tile.equals(Tile.START) || tile.equals(Tile.FINISH);
+        return isWithin(i, j) && (tile.equals(Tile.EMPTY) || tile.equals(Tile.START) || tile.equals(Tile.FINISH));
+    }
+
+    public boolean isWithin(int i, int j) {
+        return i >= 0 && j >= 0 && i < tiles.length && j <= tiles[i].length;
     }
 }

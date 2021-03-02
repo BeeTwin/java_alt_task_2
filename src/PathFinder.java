@@ -24,6 +24,7 @@ public class PathFinder {
 
             if(visited.contains(current.point) || !maze.canStep(current.point.x, current.point.y))
                 continue;
+
             visited.add(current.point);
 
             for (int dy = -1; dy <= 1; dy++)
